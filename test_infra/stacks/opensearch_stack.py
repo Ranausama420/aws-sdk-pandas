@@ -11,7 +11,11 @@ from aws_cdk import aws_s3 as s3
 from aws_cdk import aws_secretsmanager as secrets
 from constructs import Construct
 
-
+"""This function validates if a given string is a valid domain name. 
+    It checks if the length of the string is between 3 and 28 characters,
+    and if each character is a letter "a" through "z", a digit, or a 
+    hyphen. If any of these conditions are not met, it raises a 
+    ValueError with a message indicating the invalid input."""
 def validate_domain_name(name: str):
     if not 3 <= len(name) <= 28:
         raise ValueError(f"invalid domain name ({name}) - bad length ({len(name)})")
